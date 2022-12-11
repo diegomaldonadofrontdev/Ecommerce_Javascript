@@ -1,0 +1,6 @@
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/maps" as map;
+
+.event__card {
+  @include mixin.card-event();
+}

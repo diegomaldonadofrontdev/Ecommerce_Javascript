@@ -1,0 +1,190 @@
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/maps" as map;
+@use "../abstracts/variables" as v;
+
+.cards {
+  padding-bottom: 100px;
+  .container {
+    margin: 0 17%;
+    .contacto__cards {
+      display: flex;
+      gap: 1em;
+      justify-content: space-around;
+      flex-flow: row wrap;
+      .contacto__item {
+        background-color: white;
+        padding: 2em;
+        width: 375px;
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        border-radius: v.$border-radius;
+        box-shadow: v.$soft-shadow;
+
+        i {
+          color: map-get(map.$color-palette, secondary-color);
+          font-size: 3.5em;
+        }
+        .info {
+          p {
+            font-weight: 600;
+            color: map-get(map.$color-palette, text-color);
+          }
+        }
+      }
+    }
+  }
+  @include mixin.tablet() {
+    .container {
+      margin: 0 5%;
+      .contacto__cards {
+        display: flex;
+        gap: 1em;
+        justify-content: space-around;
+        flex-flow: row wrap;
+        .contacto__item {
+          background-color: white;
+          padding: 2em;
+          width: 375px;
+          display: flex;
+          align-items: center;
+          gap: 1em;
+          border-radius: v.$border-radius;
+          box-shadow: v.$soft-shadow;
+
+          i {
+            color: map-get(map.$color-palette, secondary-color);
+            font-size: 3.5em;
+          }
+          .info {
+            p {
+              font-weight: 600;
+              color: map-get(map.$color-palette, text-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.section__form {
+  background-color: white;
+  padding: 100px 0;
+  .container {
+    margin: 0 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    h2 {
+      @include mixin.h2();
+      text-align: center;
+      width: 100%;
+    }
+    .form {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 0.5em;
+      justify-content: center;
+      padding-top: 50px;
+      input {
+        padding: 1em;
+        border: 1px solid #d5d5d5;
+        border-radius: calc(v.$border-radius * 2);
+        width: 45%;
+      }
+      textarea {
+        @extend input;
+        width: 90.5%;
+        min-height: 200px;
+        resize: none;
+      }
+      &__check {
+        justify-content: center;
+        gap: 0.5em;
+
+        display: flex;
+        input {
+          width: 1.3em;
+          border: 1px solid #d5d5d5;
+          height: 1.3em;
+        }
+        p {
+          font-size: 0.8em;
+          color: gray;
+          font-weight: bold;
+          span {
+            color: map-get(map.$color-palette, secondary-color);
+          }
+        }
+      }
+    }
+    a {
+      align-self: center;
+      width: 25%;
+      text-align: center;
+    }
+  }
+  @include mixin.desktop() {
+    .container {
+      margin: 0 5%;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      h2 {
+        @include mixin.h2();
+        text-align: center;
+        width: 100%;
+      }
+      .form {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 0.5em;
+        justify-content: center;
+        padding-top: 50px;
+        input {
+          padding: 1em;
+          border: 1px solid #d5d5d5;
+          border-radius: calc(v.$border-radius * 2);
+          width: 100%;
+        }
+        textarea {
+          @extend input;
+          width: 100%;
+          min-height: 200px;
+          resize: none;
+        }
+        &__check {
+          justify-content: center;
+          gap: 0.5em;
+
+          display: flex;
+          input {
+            width: 1.3em;
+            border: 1px solid #d5d5d5;
+            height: 1.3em;
+          }
+          p {
+            font-size: 0.8em;
+            color: gray;
+            font-weight: bold;
+            span {
+              color: map-get(map.$color-palette, secondary-color);
+            }
+          }
+        }
+      }
+      a {
+        align-self: inherit;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.section__map {
+  iframe {
+    width: 100%;
+    min-height: 600px;
+  }
+}

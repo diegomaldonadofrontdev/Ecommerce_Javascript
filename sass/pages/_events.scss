@@ -1,0 +1,129 @@
+@forward "../components/card-event";
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/maps" as map;
+@use "../abstracts/variables" as v;
+
+.section__events {
+  .container {
+    display: flex;
+    margin: auto 15%;
+    flex-direction: column;
+    gap: 100px;
+    @include mixin.desktop() {
+      margin: auto 5%;
+    }
+    .event__main {
+      position: relative;
+      display: flex;
+      align-items: center;
+      @include mixin.desktop() {
+        flex-direction: column;
+      }
+      gap: 1em;
+      .img {
+        min-height: 500px;
+        max-height: 500px;
+        overflow: hidden;
+        width: 50%;
+        height: 100%;
+        border-radius: calc(v.$border-radius * 2);
+
+        @include mixin.desktop() {
+          width: 100%;
+          height: 500px;
+        }
+        img {
+          min-height: 500px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: 0 0;
+          @include mixin.desktop() {
+            min-height: inherit;
+          }
+        }
+        .date {
+          position: absolute;
+          background-color: #f5f6fe;
+          top: 2em;
+          left: 2em;
+          padding: 0.8em;
+          border-radius: calc(v.$border-radius * 2);
+          p {
+            font-weight: 900;
+            color: map-get(map.$color-palette, text-color);
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.2em;
+          }
+        }
+      }
+      .info {
+        width: 50%;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        @include mixin.desktop() {
+          width: 100%;
+        }
+        h3 {
+          @include mixin.h2();
+          width: auto;
+        }
+        .leyenda {
+          color: map-get(map.$color-palette, secondary-color);
+          text-transform: uppercase;
+          font-weight: 600;
+        }
+        .timer {
+          display: flex;
+          width: 320px;
+          justify-content: space-around;
+          p {
+            display: flex;
+            flex-direction: column;
+            font-size: 2.6em;
+            text-align: center;
+            font-weight: 500;
+            color: map-get(map.$color-palette, secondary-color);
+            font-family: v.$secondary-font;
+            span {
+              color: map-get(map.$color-palette, text-color);
+              font-size: 0.33em;
+              font-family: v.$primary-font;
+              font-weight: 700;
+            }
+          }
+        }
+        .btn-primary {
+          align-self: flex-start;
+          width: 200px;
+          text-align: center;
+          animation: latidos 1s infinite;
+          @include mixin.notebook() {
+            align-self: center;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .event__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 50px 4em;
+    }
+  }
+}
+
+@keyframes latidos {
+  from {
+    transform: none;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: none;
+  }
+}

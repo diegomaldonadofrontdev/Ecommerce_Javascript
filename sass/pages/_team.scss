@@ -1,0 +1,101 @@
+@forward "../components/card-team";
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/maps" as map;
+@use "../abstracts/variables" as v;
+
+.section__team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 50px;
+    justify-content: space-around;
+    margin: 0 20%;
+    @include mixin.desktop() {
+      margin: 0 10%;
+    }
+  }
+}
+
+.section__counter {
+  margin-top: 100px;
+  min-height: 370px;
+  background: url(../img/bannerdark.webp);
+  background-size: cover;
+  position: relative;
+  .overlay {
+    background: linear-gradient(149.63deg, #6a11cb 5.49%, #2575fc 114.03%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    mix-blend-mode: color;
+  }
+  .container {
+    display: flex;
+    gap: 5em;
+    justify-content: center;
+    align-items: center;
+    min-height: 370px;
+
+    .counter__item {
+      text-align: center;
+      .counter__number {
+        color: white;
+        font-size: 6em;
+        font-weight: bold;
+        line-height: 1em;
+      }
+      .counter__description {
+        font-size: 1.7em;
+        font-weight: bold;
+        color: #dab9ff;
+        text-align: center;
+        line-height: 1em;
+      }
+    }
+
+    @include mixin.desktop() {
+      gap: 4em;
+      .counter__item {
+        .counter__number {
+          color: white;
+          font-size: 4em;
+          font-weight: bold;
+          line-height: 1em;
+        }
+        .counter__description {
+          font-size: 1.5em;
+          font-weight: bold;
+          color: #dab9ff;
+          text-align: center;
+          line-height: 1em;
+        }
+      }
+    }
+    @include mixin.tablet() {
+      flex-direction: column;
+      gap: 2em;
+      .counter__item {
+        .counter__number {
+          color: white;
+          font-size: 3em;
+          font-weight: bold;
+          line-height: 1em;
+        }
+        .counter__description {
+          font-size: 1.2em;
+          font-weight: bold;
+          color: #dab9ff;
+          text-align: center;
+          line-height: 1em;
+        }
+      }
+    }
+  }
+}

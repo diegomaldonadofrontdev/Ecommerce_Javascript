@@ -1,0 +1,107 @@
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/maps" as map;
+@use "../abstracts/variables" as v;
+
+.footer {
+  .container {
+    @include mixin.container(50px);
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 2em 0;
+    & > div {
+      max-width: 230px;
+      @include mixin.desktop() {
+        max-width: 45%;
+        width: 50%;
+      }
+      @include mixin.mobile() {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+    .brand__info {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      .brand__logo {
+        img {
+          width: 50px;
+        }
+      }
+      .brand__social {
+        display: flex;
+        gap: 1em;
+        a {
+          color: map-get(map.$color-palette, text-color);
+
+          i {
+            font-size: 1.5em;
+          }
+        }
+      }
+      .brand__contact {
+        .contact__email,
+        .contact__phone {
+          h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            margin: 0.5em 0;
+          }
+        }
+      }
+    }
+    .page__info {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      a {
+        font-weight: bold;
+        color: map-get(map.$color-palette, text-color);
+      }
+    }
+
+    .popular__courses {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      a {
+        font-weight: bold;
+        color: map-get(map.$color-palette, text-color);
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        i {
+          font-size: 0.5em;
+        }
+      }
+    }
+
+    .instagram__post {
+      .post__grid {
+        padding-top: 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0.5em;
+        img {
+          width: 100%;
+          border-radius: 0.5em;
+          cursor: pointer;
+          &:hover {
+            transform: scale(110%);
+          }
+        }
+      }
+    }
+
+    h3 {
+      font-size: 1.375em;
+      font-family: v.$secondary-font;
+      font-weight: 400;
+      color: map-get(map.$color-palette, text-color);
+    }
+  }
+}

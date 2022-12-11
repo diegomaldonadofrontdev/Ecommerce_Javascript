@@ -1,0 +1,12 @@
+@use "../abstracts/maps" as map;
+@use "../abstracts/mixins" as mixin;
+
+.bars__menu {
+  .bx {
+    color: map-get(map.$color-palette, text-color);
+    font-size: 32px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

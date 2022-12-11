@@ -1,0 +1,6 @@
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/maps" as map;
+
+.features__card {
+  @include mixin.card-features();
+}

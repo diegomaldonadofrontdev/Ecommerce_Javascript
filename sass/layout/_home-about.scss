@@ -1,0 +1,273 @@
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/maps" as map;
+@use "../abstracts/variables" as v;
+
+.home__about {
+  .container {
+    position: relative;
+    @include mixin.container(150px);
+    flex-direction: column;
+    gap: 2em;
+    .about__container {
+      display: flex;
+      flex-direction: column;
+      background: map-get(map.$gradient-palette, secondary-gradient);
+      padding: 5em;
+      color: white;
+      border-radius: v.$border-radius;
+      box-shadow: v.$soft-shadow;
+      text-align: start;
+      gap: 2em;
+      h2 {
+        @include mixin.h2;
+        color: white !important;
+      }
+      .about__items {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        width: 45%;
+        .about__item {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: row;
+          i {
+            color: v.$primary-color;
+            font-size: 2em;
+            font-weight: 900;
+            margin-top: -2px;
+          }
+          .item__text {
+            margin-left: 1em;
+            h3 {
+              font-weight: 700;
+              font-size: 1.5em;
+            }
+            p {
+              margin-top: 0.5em;
+            }
+          }
+        }
+      }
+    }
+    .about__review {
+      width: 45%;
+      position: absolute;
+      background-color: white;
+      box-shadow: v.$soft-shadow;
+      border-radius: v.$border-radius;
+      padding: 5em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      bottom: 70px;
+      right: 50px;
+      gap: 2em;
+      .name {
+        text-align: center;
+        .ranking {
+          i {
+            color: map-get(map.$color-palette, primary-color);
+          }
+        }
+      }
+      img {
+        border-radius: 100%;
+        max-width: 50%;
+      }
+      p {
+        color: #485870;
+        font-style: italic;
+      }
+    }
+
+    @include mixin.notebook() {
+      flex-direction: column;
+      gap: 2em;
+      .about__container {
+        display: flex;
+        flex-direction: column;
+        background: map-get(map.$gradient-palette, secondary-gradient);
+        padding: 3.75em;
+        color: white;
+        border-radius: v.$border-radius;
+        box-shadow: v.$soft-shadow;
+        text-align: center;
+        gap: 2em;
+        h2 {
+          @include mixin.h2;
+          width: 100%;
+          text-align: start;
+        }
+        .about__items {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          text-align: start;
+          gap: 1.5em;
+          .about__item {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 1em;
+            .item__text {
+              margin: 0;
+              h3 {
+                font-weight: 700;
+                font-size: 1.3em;
+              }
+              p {
+                margin-top: 0.5em;
+              }
+            }
+            i {
+              color: v.$primary-color;
+              font-size: 2em;
+              font-weight: 900;
+            }
+          }
+        }
+      }
+      .about__review {
+        position: inherit;
+        width: 100%;
+        background-color: white;
+        box-shadow: v.$soft-shadow;
+        border-radius: v.$border-radius;
+        bottom: 0;
+        right: 0;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2em;
+        .name {
+          text-align: center;
+          h3 {
+            font-size: 1.375em;
+          }
+          .ranking {
+            i {
+              color: map-get(map.$color-palette, primary-color);
+              font-size: 1.1em;
+              margin: 0.3em;
+            }
+          }
+        }
+        img {
+          border-radius: 100%;
+          width: 20%;
+        }
+        p {
+          color: #485870;
+          font-style: italic;
+          font-size: 1.1em;
+        }
+      }
+    }
+    @include mixin.tablet() {
+      flex-direction: column;
+      gap: 2em;
+      .about__container {
+        display: flex;
+        flex-direction: column;
+        background: map-get(map.$gradient-palette, secondary-gradient);
+        padding: 2em;
+        color: white;
+        border-radius: v.$border-radius;
+        box-shadow: v.$soft-shadow;
+        text-align: center;
+        gap: 2em;
+        h2 {
+          font-size: 2.3em;
+          line-height: 1em;
+          text-align: center;
+        }
+        .about__items {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          gap: 1.5em;
+          .about__item {
+            flex-direction: row;
+            align-items: flex-start;
+
+            .item__text {
+              margin: 0;
+              h3 {
+                font-weight: 700;
+                font-size: 1.5em;
+                text-align: start;
+              }
+              p {
+                margin-top: 0.5em;
+                text-align: start;
+              }
+            }
+            i {
+              color: v.$primary-color;
+              font-size: 2em;
+            }
+          }
+        }
+        @include mixin.mobile() {
+          .about__items {
+            .about__item {
+              flex-direction: column;
+              align-items: center;
+              .item__text {
+                h3,
+                p,
+                i {
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+      .about__review {
+        position: inherit;
+        max-width: 100%;
+        background-color: white;
+        box-shadow: v.$soft-shadow;
+        border-radius: v.$border-radius;
+        bottom: 0;
+        right: 0;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2em;
+        .name {
+          text-align: center;
+          .ranking {
+            i {
+              color: map-get(map.$color-palette, primary-color);
+            }
+          }
+        }
+        img {
+          border-radius: 100%;
+          max-width: 60%;
+        }
+        p {
+          color: #485870;
+          font-style: italic;
+        }
+        @include mixin.tablet() {
+          img {
+            width: 50%;
+            max-width: 150px;
+          }
+          p {
+            font-size: 1.03em;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@use "../abstracts/mixins" as mixin;
+
+.home__features {
+  background-color: #f5f6fe;
+  .container {
+    @include mixin.container(100px);
+    justify-content: space-between;
+    padding-top: 100px !important;
+    @include mixin.notebook() {
+      padding-top: 50px !important;
+      gap: 2em;
+    }
+    @include mixin.tablet() {
+      flex-direction: column;
+      padding-top: 50px !important;
+      gap: 2em;
+    }
+    &.np {
+      padding-top: 50px !important;
+      padding-bottom: 0px !important;
+
+    }
+  }
+}

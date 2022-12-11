@@ -1,0 +1,40 @@
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/maps" as map;
+@use "../abstracts/variables" as v;
+
+.section__faqs {
+  background-color: white;
+  padding-bottom: 50px;
+  .container {
+    @include mixin.container(100px);
+    padding-bottom: 50px !important;
+    flex-direction: column;
+    gap: 2em;
+    h2 {
+      @include mixin.h2();
+      text-align: center;
+      width: auto;
+      max-width: 630px;
+      margin: auto;
+    }
+    p {
+      text-align: center;
+      max-width: 630px;
+      margin: auto;
+    }
+    .faq__body {
+      text-align: center;
+      max-width: 100% !important;
+      padding: 0;
+      margin: 0;
+    }
+    .faqs__container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+      .faqs__item {
+        @include mixin.faqs-item();
+      }
+    }
+  }
+}

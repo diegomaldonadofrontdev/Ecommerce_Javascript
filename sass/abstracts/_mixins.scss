@@ -1,0 +1,402 @@
+@use "./maps" as map;
+@use "./variables" as v;
+
+@mixin desktop() {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin notebook() {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: 575px) {
+    @content;
+  }
+}
+
+@mixin container($y) {
+  width: 100%;
+  display: flex;
+  padding: $y 0px;
+  max-width: 1110px;
+  margin: auto;
+  @include desktop() {
+    max-width: 1110px;
+    padding: $y 40px;
+  }
+  @include notebook() {
+    max-width: 1110px;
+    padding: $y 40px;
+  }
+  @include tablet() {
+    max-width: 1110px;
+    padding: $y 20px;
+  }
+}
+
+@mixin card-features() {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5em 1.87em;
+  align-items: center;
+  gap: 1em;
+  width: 346px;
+  height: 250px;
+  text-align: center;
+  border-radius: v.$border-radius;
+  box-shadow: v.$soft-shadow;
+  cursor: pointer;
+  i {
+    background: map-get(map.$gradient-palette, secondary-gradient);
+    width: 74px;
+    height: 74px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    border-radius: calc(v.$border-radius / 2);
+  }
+  h3 {
+    color: map-get(map.$color-palette, text-color);
+    font-size: 1.6em;
+  }
+  p {
+    font-weight: 300;
+  }
+  @include notebook() {
+    width: 300px;
+    height: 296px;
+  }
+  @include tablet() {
+    margin: auto;
+    height: 286px;
+    width: 80%;
+  }
+  @include mobile() {
+    margin: auto;
+    width: 100%;
+    height: 279px;
+  }
+  &:hover {
+    background: map-get(map.$gradient-palette, secondary-gradient);
+    i {
+      background: white;
+      color: #6a11cb;
+    }
+    h3,
+    p {
+      color: white;
+    }
+  }
+}
+
+@mixin h2() {
+  font-size: 3em;
+  line-height: 1em;
+  width: 500px;
+  font-family: v.$secondary-font;
+  font-weight: 500;
+  color: #2b3543;
+}
+
+@mixin card-course() {
+  width: 100%;
+  max-width: 350px;
+  background-color: white;
+  border-radius: v.$border-radius;
+  box-shadow: v.$soft-shadow;
+  .curso__header {
+    display: flex;
+    gap: 1em;
+    padding: 1.87em;
+    .curso__title {
+      display: flex;
+      flex-direction: column;
+
+      h4 {
+        font-family: v.$secondary-font;
+        font-weight: 500;
+        color: #2b3543;
+        font-size: 1.5em;
+      }
+      .ranking {
+        margin-top: 0.1em;
+        i {
+          color: map-get(map.$color-palette, primary-color);
+        }
+      }
+      p {
+        font-weight: bold;
+        color: gray;
+        font-size: 0.9em;
+        &:last-child {
+          color: map-get(map.$color-palette, secondary-color);
+        }
+      }
+    }
+    .icon {
+      width: 64px;
+      height: 64px;
+      justify-content: center;
+      background: map-get(map.$gradient-palette, html-gradient);
+      display: flex;
+      align-items: center;
+      border-radius: v.$border-radius;
+      i {
+        font-size: 2.5em;
+        color: white;
+      }
+    }
+  }
+
+  .curso__price {
+    background-color: #e9f1fe;
+    text-align: center;
+    padding: 0.5em 0;
+    font-weight: 400;
+    font-family: v.$secondary-font;
+    color: #2b3543;
+    font-size: 1.2em;
+  }
+  .curso__body {
+    padding: 1.87em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    ul {
+      li {
+        list-style: initial;
+        margin: 1em 0;
+        color: map-get(map.$color-palette, text-color);
+        margin-left: 1em;
+      }
+    }
+  }
+  a {
+    text-align: center;
+    border: 1px solid rgb(219, 219, 219);
+    text-transform: uppercase;
+    font-size: 0.95em;
+    line-height: 1em;
+    padding: 1em 2em;
+    border-radius: 0.35em;
+    font-weight: 900;
+    border-radius: v.$border-radius;
+    color: map-get(map.$color-palette, secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0em;
+    transition: all 0.3s ease;
+    i {
+      font-size: 1.5em;
+    }
+    &:hover {
+      gap: 0.5em;
+      border-color: v.$secondary-color;
+    }
+  }
+  &:hover {
+    box-shadow: 0 2px 14px rgba(137, 139, 255, 0.5);
+  }
+  @include notebook() {
+    width: 100%;
+    max-width: 100%;
+    &:last-child {
+      display: none;
+    }
+  }
+}
+
+@mixin card-team() {
+  cursor: pointer;
+  img {
+    top: 0;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    border-radius: v.$border-radius;
+    position: relative;
+  }
+  h3 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  &:hover {
+    img {
+      top: -10px;
+    }
+    h3 {
+      color: map-get(map.$color-palette, secondary-color);
+    }
+  }
+}
+
+@mixin card-event() {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: white;
+  border-radius: calc(v.$border-radius * 2);
+  overflow: hidden;
+  box-shadow: v.$soft-shadow;
+
+  .img {
+    max-height: 280px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .date {
+      position: absolute;
+      background-color: #f5f6fe;
+      top: 2em;
+      left: 2em;
+      padding: 0.8em;
+      border-radius: v.$border-radius;
+      p {
+        font-weight: 900;
+        color: map-get(map.$color-palette, text-color);
+        text-align: center;
+        font-size: 1.1em;
+        line-height: 1.2em;
+      }
+    }
+  }
+  .info {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    h3 {
+      @include h2();
+      font-size: 2em;
+      width: auto;
+    }
+    .leyenda {
+      color: map-get(map.$color-palette, secondary-color);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      color: map-get(map.$color-palette, secondary-color);
+      font-size: 1em;
+      font-weight: 700;
+      border-radius: calc(v.$border-radius * 2);
+      gap: 0;
+      border: 1px solid rgb(238, 238, 238);
+      padding: 1em 1em;
+      text-transform: uppercase;
+      &:hover {
+        gap: 0.5em;
+        border-color: v.$secondary-color;
+      }
+      i {
+        font-size: 1.3em;
+      }
+    }
+  }
+}
+
+@mixin faqs-item() {
+  border-radius: v.$border-radius;
+  box-shadow: v.$soft-shadow;
+  background-color: white;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  .faq__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    h3 {
+      color: map-get(map.$color-palette, "text-color");
+      &.active {
+        color: v.$secondary-color;
+      }
+      line-height: 1em;
+    }
+    i {
+      color: map-get(map.$color-palette, "text-color");
+
+      &.active {
+        color: v.$secondary-color;
+        transform: rotate(90deg);
+      }
+    }
+  }
+  p {
+    text-align: start;
+    height: 0px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    &.active {
+      opacity: 100;
+      height: 100px;
+      margin-top: 1em;
+    }
+  }
+  @include mobile() {
+    border-radius: v.$border-radius;
+    box-shadow: v.$soft-shadow;
+    background-color: white;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    .faq__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      h3 {
+        color: map-get(map.$color-palette, "text-color");
+        &.active {
+          color: v.$secondary-color;
+        }
+        line-height: 1em;
+      }
+      i {
+        color: map-get(map.$color-palette, "text-color");
+
+        &.active {
+          color: v.$secondary-color;
+          transform: rotate(90deg);
+        }
+      }
+    }
+    p {
+      text-align: start;
+      height: 0px;
+      transition: all 0.5s ease;
+      overflow: hidden;
+      &.active {
+        opacity: 100;
+        height: 140px;
+        margin-top: 1em;
+      }
+    }
+  }
+}

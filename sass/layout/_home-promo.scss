@@ -1,0 +1,87 @@
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/variables" as v;
+.home__promo {
+  position: relative;
+
+  .container {
+    @include mixin.container(100px);
+    flex-direction: row-reverse;
+    gap: 2.5em;
+    .promo__info {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      text-align: start;
+      width: 50%;
+      h2 {
+        @include mixin.h2;
+      }
+      p {
+        width: 100%;
+      }
+      a {
+        width: 200px;
+        text-align: center;
+      }
+    }
+    .promo__img {
+      img {
+        width: 50%;
+        position: absolute;
+        left: 0;
+        bottom: -120px;
+      }
+    }
+  }
+  @include mixin.desktop() {
+    .container {
+      flex-direction: column;
+      padding-top: 0 !important;
+      .promo__info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        text-align: start;
+      }
+      .promo__img {
+        img {
+          position: inherit;
+          width: 100%;
+        }
+      }
+    }
+  }
+  @include mixin.mobile() {
+    .container {
+      @include mixin.container(100px);
+      flex-direction: column;
+      gap: 2.5em;
+      .promo__info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        text-align: center;
+        h2 {
+          width: 100%;
+          font-size: 2.2em;
+          line-height: 1em;
+        }
+        p {
+          width: 100%;
+        }
+
+        a {
+          width: 100%;
+        }
+      }
+      .promo__img {
+        img {
+          position: unset;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

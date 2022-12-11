@@ -1,0 +1,142 @@
+[
+  {
+    "nombre": "Samsung Galaxy S21 FE 5G 128 GB Negro",
+    "precio": 169999,
+    "imagen": "https://images.fravega.com/f300/a3bc2df7f0328a3417d22bbc6f77a1ba.jpg.webp",
+    "marca": "samsung",
+    "id": 1
+  },
+  {
+    "nombre": "Motorola Edge 30 128GB Gris",
+    "precio": 119999,
+    "imagen": "https://images.fravega.com/f300/00b49f19b9ee7238e461958803c0c8e5.jpg.webp",
+    "marca": "motorola",
+    "id": 2
+  },
+  {
+    "nombre": "Samsung Galaxy A13 64GB Negro",
+    "precio": 54999,
+    "imagen": "https://images.fravega.com/f300/e1700077771fcf71dbb88182f92dab1e.jpg.webp",
+    "marca": "samsung",
+    "id": 3
+  },
+  {
+    "nombre": "Motorola G42 128GB Verde Atlántico",
+    "precio": 65999,
+    "imagen": "https://images.fravega.com/f300/81a801142b595bba3d3b99b0f03145fb.jpg.webp",
+    "marca": "motorola",
+    "id": 4
+  },
+  {
+    "nombre": "Samsung Galaxy A23 128GB Negro",
+    "precio": 69999,
+    "imagen": "https://images.fravega.com/f300/f741c5dc03f09eebef57e56dcc86c8f9.jpg.webp",
+    "marca": "samsung",
+    "id": 5
+  },
+  {
+    "nombre": "Motorola G22 128GB Celeste",
+    "precio": 53999,
+    "imagen": "https://images.fravega.com/f300/1df905f399b2e1a9c9ac94cb47d0f685.jpg.webp",
+    "marca": "motorola",
+    "id": 6
+  },
+  {
+    "nombre": "TCL 30E 64GB Space Gray",
+    "precio": 42999,
+    "imagen": "https://images.fravega.com/f300/e85ad009f85add2dff7b6895c18ec5d1.jpg.webp",
+    "marca": "tlc",
+    "id": 7
+  },
+  {
+    "nombre": "Samsung Galaxy A04 32GB Green",
+    "precio": 33999,
+    "imagen": "https://images.fravega.com/f300/7551a334400757273cde92f4a00c40f3.jpg.webp",
+    "marca": "samsung",
+    "id": 8
+  },
+  {
+    "nombre": "iPhone 13 256GB Red",
+    "precio": 787199,
+    "imagen": "https://images.fravega.com/f300/584d269b9ea76ad3c474789eaa3e207c.jpg.webp",
+    "marca": "apple",
+    "id": 9
+  },
+  {
+    "nombre": "iPhone 13 256GB Midnight",
+    "precio": 787199,
+    "imagen": "https://images.fravega.com/f300/d9fab4e3c96a18d40da95223d9b4cb0f.jpg.webp",
+    "marca": "apple",
+    "id": 10
+  },
+  {
+    "nombre": "Samsung Galaxy Z Fold 4 Color Negro 256Gb Memoria",
+    "precio": 449999,
+    "imagen": "https://images.fravega.com/f300/b569e9cf6a6afdc78099c68cd7892e09.jpg.webp",
+    "marca": "samsung",
+    "id": 11
+  },
+  {
+    "nombre": "Xiaomi Poco F4 GT 5G 12GB 256GB C Amarillo Sin Cargador",
+    "precio": 388199,
+    "imagen": "https://images.fravega.com/f300/fb92edfac6ae7289c726d5b9c43494fa.jpg.webp",
+    "marca": "xiaomi",
+    "id": 12
+  },
+  {
+    "nombre": "Xiaomi Note 11T Pro 12GB 256G Blanco Claro de Luna Sin Cargador",
+    "precio": 346499,
+    "imagen": "https://images.fravega.com/f300/4648c909f5a58d795e5b12b058a995bc.jpg.webp",
+    "marca": "xiaomi",
+    "id": 13
+  },
+  {
+    "nombre": "Samsung Galaxy S22+ 8gb Ram 256gb Phantom Black",
+    "precio": 314999,
+    "imagen": "https://images.fravega.com/f300/ab10116d546fbe077ee89ac505af151b.jpg.webp",
+    "marca": "samsung",
+    "id": 14
+  },
+  {
+    "nombre": "Xiaomi 11T Pro Moonlight White 8GB RAM 256GB ROM",
+    "precio": 299999,
+    "imagen": "https://images.fravega.com/f300/efdc183bb1ff3f3d4accbb06ae577830.jpg.webp",
+    "marca": "xiaomi",
+    "id": 15
+  },
+  {
+    "nombre": "Samsung Galaxy 128GB 8 GB S22 Bora Purple",
+    "precio": 249999,
+    "imagen": "https://images.fravega.com/f300/6eb1eab6b9b43727e4ec39e19d0cd681.jpg.webp",
+    "marca": "samsung",
+    "id": 16
+  },
+  {
+    "nombre": "Xiaomi Redmi Note 11 Pro+ 5G 8GB 128G Green",
+    "precio": 246199,
+    "imagen": "https://images.fravega.com/f300/6d2dcda722876e4b331340dcbab10047.jpg.webp",
+    "marca": "xiaomi",
+    "id": 17
+  },
+  {
+    "nombre": "Motorola Edge 30 Ultra 256 GB Blanco Starlight",
+    "precio": 229999,
+    "imagen": "https://images.fravega.com/f300/d8811db5d536b16c3b3f10e92a6d970b.jpg.webp",
+    "marca": "motorola",
+    "id": 18
+  },
+  {
+    "nombre": "Xiaomi Redmi Note 11 Pro 5g 6gb+128g Blue",
+    "precio": 229419,
+    "imagen": "https://images.fravega.com/f300/c64be8a8334fed0d5aa3ea2c69be50c8.jpg.webp",
+    "marca": "xiaomi",
+    "id": 19
+  },
+  {
+    "nombre": "Apple iPhone SE 64 GB Negro",
+    "precio": 227999,
+    "imagen": "https://images.fravega.com/f300/98fa6c9c873d95fb00396189792a823f.jpg.webp",
+    "marca": "apple",
+    "id": 20
+  }
+]

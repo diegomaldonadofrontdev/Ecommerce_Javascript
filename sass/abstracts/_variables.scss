@@ -1,0 +1,27 @@
+$primary-font: "Nunito Sans", sans-serif;
+$secondary-font: "Oswald", sans-serif;
+
+$border-radius: 0.35em;
+$soft-shadow: 0 2px 14px rgba(216, 217, 255, 0.66);
+
+$primary-gradient: linear-gradient(
+  90deg,
+  rgba(255, 8, 68, 1) 0%,
+  rgba(255, 139, 103, 1) 100%
+);
+
+$secondary-gradient: linear-gradient(180deg, #6a11cb 21.85%, #2575fc 104.32%);
+$html-gradient: linear-gradient(314.64deg, #f9d423 -11.62%, #f83600 85.97%);
+$css-gradient: linear-gradient(
+  90deg,
+  rgba(0, 121, 255, 1) 0%,
+  rgba(0, 212, 255, 1) 100%
+);
+$js-gradient: linear-gradient(
+  90deg,
+  rgba(255, 201, 21, 1) 0%,
+  rgba(255, 239, 0, 1) 100%
+);
+
+$primary-color: #ff0844;
+$secondary-color: #3d53eb;

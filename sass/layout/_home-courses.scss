@@ -1,0 +1,73 @@
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/maps" as map;
+@use "../abstracts/variables" as v;
+
+.home__courses {
+  background-color: white;
+  .container {
+    @include mixin.container(50px);
+    flex-direction: column;
+    .cursos__presentacion {
+      width: 100%;
+      h2 {
+        @include mixin.h2();
+        width: 100% !important;
+        text-align: center !important;
+        margin-bottom: 0.5em;
+      }
+      p {
+        text-align: center;
+      }
+      .cursos__nav {
+        margin-top: 2em;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 0.5em;
+        justify-content: space-between;
+        @include mixin.notebook() {
+          justify-content: center;
+        }
+        a {
+          padding: 0.5em 1em;
+          border: 1px solid gray;
+          border-radius: v.$border-radius;
+          font-weight: bold;
+          color: map-get(map.$color-palette, text-color);
+          &:hover {
+            color: white;
+            background-color: map-get(map.$color-palette, text-color);
+          }
+        }
+      }
+    }
+    .cursos__container {
+      margin-top: 2em;
+      display: flex;
+      justify-content: space-between;
+      gap: 2em 1em;
+      @include mixin.tablet() {
+        flex-flow: column;
+      }
+      .curso__card {
+        @include mixin.card-course();
+        img {
+          width: 100%;
+        }
+        &:nth-child(2) {
+          .icon {
+            background: map-get(map.$gradient-palette, css-gradient) !important;
+          }
+        }
+        &:nth-child(3) {
+          .icon {
+            background: map-get(map.$gradient-palette, js-gradient) !important;
+          }
+        }
+      }
+    }
+    a.btn-primary {
+      margin-top: 3.5em;
+      align-self: center;
+    }
+  }
+}

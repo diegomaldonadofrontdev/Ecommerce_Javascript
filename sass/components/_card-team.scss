@@ -1,0 +1,8 @@
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/maps" as map;
+@use "../abstracts/variables" as v;
+
+.team__card {
+    @include mixin.card-team();
+  }
+  

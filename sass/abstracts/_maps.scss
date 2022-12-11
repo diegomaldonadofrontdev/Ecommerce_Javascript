@@ -1,0 +1,16 @@
+@use "./variables" as v;
+
+$gradient-palette: (
+  "primary-gradient": v.$primary-gradient,
+  "secondary-gradient": v.$secondary-gradient,
+  "html-gradient": v.$html-gradient,
+  "css-gradient": v.$css-gradient,
+  "js-gradient": v.$js-gradient,
+
+);
+
+$color-palette: (
+  "primary-color": v.$primary-color,
+  "secondary-color": v.$secondary-color,
+  "text-color": #2a2b3d,
+);

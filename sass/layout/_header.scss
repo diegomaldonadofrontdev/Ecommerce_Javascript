@@ -1,0 +1,93 @@
+@forward "../components/nav";
+@forward "../components/button";
+@forward "../components/menu-btn";
+@forward "../components/card-features";
+
+@use "../abstracts/mixins" as mixin;
+@use "../abstracts/variables" as v;
+@use "../abstracts/maps" as map;
+
+.header {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  box-shadow: 0px 12px 24px -12px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 12px 24px -12px rgba(0, 0, 0, 0.1);
+
+  .container {
+    @include mixin.container(20px);
+    justify-content: space-between;
+    align-items: center;
+    a {
+      display: flex;
+      gap: 1em;
+      align-items: center;
+      color: map-get(map.$color-palette, text-color);
+      text-transform: lowercase;
+      h1 {
+        font-size: 1.5em;
+      }
+      img {
+        width: 50px;
+      }
+    }
+  }
+}
+
+nav {
+  background-color: #f5f6fe !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  ul {
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+    li {
+      margin: auto;
+      background-color: white;
+      border-radius: 0.5em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1em;
+      width: 90%;
+      padding: 1em;
+      font-size: 1em;
+      color: map-get(map.$color-palette, text-color);
+      box-shadow: v.$soft-shadow;
+      div {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+      }
+      img {
+        width: 40px;
+      }
+      .bx {
+        justify-self: end;
+        font-size: 24px;
+        color: rgb(245, 0, 0);
+        cursor: pointer;
+      }
+    }
+  }
+  a {
+    color: white !important;
+    margin-top: 2em;
+    font-size: 1em !important;
+  }
+  #total {
+    margin-top: 1em;
+    font-size: 1.2em;
+    color: map-get(map.$color-palette, text-color);
+    font-weight: bold;
+  }
+}
+
+#btn-finalizar {
+  display: none;
+}

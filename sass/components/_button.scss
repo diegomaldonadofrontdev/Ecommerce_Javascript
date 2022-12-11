@@ -1,0 +1,45 @@
+@use "../abstracts/maps" as map;
+
+@mixin button-primary() {
+  background: map-get(map.$gradient-palette, primary-gradient);
+  background-size: 110%;
+  color: white;
+  font-size: 14px;
+  line-height: 1em;
+  padding: 1em 2em;
+  border-radius: 0.35em;
+  font-weight: 900;
+  text-transform: uppercase;
+  &:hover {
+    background-position: 200px 100px;
+  }
+}
+
+.btn-primary {
+  @include button-primary();
+}
+
+@mixin button-secondary() {
+  color: map-get(map.$color-palette, primary-color);
+  font-size: 14px;
+  line-height: 1em;
+  padding: 1em 2em;
+  border-radius: 0.35em;
+  font-weight: 900;
+  border: 1px solid map-get(map.$color-palette, primary-color);
+  text-transform: uppercase;
+  &:hover {
+    background: map-get(map.$gradient-palette, primary-gradient);
+    color: white;
+    font-size: 14px;
+    line-height: 1em;
+    padding: 1em 2em;
+    border-radius: 0.35em;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}
+
+.btn-secondary {
+  @include button-secondary();
+}
