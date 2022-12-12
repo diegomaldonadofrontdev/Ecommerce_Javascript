@@ -1,6 +1,6 @@
 // Llamado al json con async
 const consultarProductos = async () => {
-  const response = await fetch("../data/productos.json");
+  const response = await fetch("./productos.json");
   const productos = await response.json();
   return productos;
 };
@@ -160,3 +160,4 @@ btnFinalizar.addEventListener("click", finalizarCompra);
 
 actualizarCarrito();
 imprimirCarrito();
+
